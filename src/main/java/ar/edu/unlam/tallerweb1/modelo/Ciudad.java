@@ -5,9 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Ciudad {
@@ -15,9 +13,9 @@ public class Ciudad {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nombre;
+	@OneToOne
 	private Ubicacion ubicacionGeografica;
 	@ManyToOne
-	@Cascade(CascadeType.ALL)
 	private Pais pais;
 	public Long getId() {
 		return id;

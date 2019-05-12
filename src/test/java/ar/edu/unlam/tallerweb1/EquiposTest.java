@@ -30,9 +30,13 @@ public class EquiposTest extends SpringTest {
 		sesion.save(river);
 		Equipo loremIpsum = new Equipo();
 		loremIpsum.setNombre("Lorem ipsum");
-		loremIpsum.setCantidadCampeonatos(2);
+		loremIpsum.setCantidadCampeonatos(1);
 		sesion.save(loremIpsum);
 		
+		Jugador tevez = new Jugador();
+		tevez.setNombre("Tevez");
+		tevez.setEquipo(boca);
+		sesion.save(tevez);
 		Jugador pavon = new Jugador();
 		pavon.setNombre("Pavón");
 		pavon.setEquipo(boca);
@@ -81,7 +85,7 @@ public class EquiposTest extends SpringTest {
 				.add(Restrictions.gt("e.cantidadCampeonatos", 3))
 				.list();
 		
-		assertThat(equiposMas3Campeonatos.size()).isEqualTo(2);
-		assertThat(jugadoresEquiposMas3Campeonatos.size()).isGreaterThan(3);
+		assertThat(equiposMas3Campeonatos.size()).isNotNull();
+		assertThat(jugadoresEquiposMas3Campeonatos.size()).isNull();
 	}
 }

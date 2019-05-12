@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8">
 	<!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" >
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 </head>
@@ -28,9 +28,8 @@
 
 			<%--Bloque que es visible si el elemento error no está vacío	--%>
 <c:if test="${not empty error}">
-	        <h4><span>${error}</span></h4>
-	        <br>
-</c:if>	
+	        <div class="alert alert-danger">${error}</div>
+</c:if>
 		</div>
 	</div>
 	
