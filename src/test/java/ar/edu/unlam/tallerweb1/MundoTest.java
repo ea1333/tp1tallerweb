@@ -253,9 +253,9 @@ public class MundoTest extends SpringTest {
 				.add(Restrictions.lt("u.latitud", 0.0))
 				.list();
 		
-		assertThat(paisesHablaInglesa).isNotNull();
-		assertThat(paisesEuropa).isNotNull();
-		assertThat(paisesCapitalTropicoCancer).isNotNull();
-		assertThat(ciudadesHemisferioSur).isNotNull();
+		assertThat(paisesHablaInglesa.size()).isNotNull();
+		assertThat(paisesEuropa.size()).isNotNull();
+		assertThat(paisesCapitalTropicoCancer.size()).isNotNull();
+		assertThat(ciudadesHemisferioSur.size()).isNotNull();
 	}
 }
